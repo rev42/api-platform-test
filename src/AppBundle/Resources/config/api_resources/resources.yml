@@ -1,0 +1,29 @@
+AppBundle\Entity\Book:
+    # does not seem to work. Need to be defined in Entity class then
+    #attributes:
+    #    filters: 
+    #        'book.search_filter'
+    # Resource collections
+    collectionOperations:
+        # enable GET method on Book collections
+        get:
+            method: 'GET'
+            normalization_context:
+                groups: ['book_list']
+        op_cms_book_list:
+            route_name: 'cms_book_list'
+            normalization_context:
+                groups: ['book_list']
+    itemOperations:
+        # enable GET method on Book item
+        get:
+            method: 'GET'
+            normalization_context:
+                groups: ['book_get']
+        # Custom operation
+        # - A new route must be defined in app/config/routing.yml and match "route_name"
+        # - A new controller located in src/AppBundle/Controller must be created
+        op_cms_book_get:
+            route_name: 'cms_book_get'
+            normalization_context:
+                groups: ['gr_cms_book_get']

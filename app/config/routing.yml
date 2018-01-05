@@ -1,0 +1,26 @@
+api:
+    resource: '.'
+    type: 'api_platform'
+
+app:
+    resource: '@AppBundle/Action/'
+    type: 'annotation'
+
+# Routes refered by the custom operation
+# @see src/AppBundle/Resources/config/api_resources/resources.yml
+cms_book_get:
+    path: '/cms/books/{id}'
+    methods:  ['GET']
+    defaults:
+        # Refers to src/AppBundle/Controller/BookController::specialAction
+        _controller: 'AppBundle:Book:special'
+        _api_resource_class: 'AppBundle\Entity\Book'
+        _api_item_operation_name: 'op_cms_book_get'
+cms_book_list:
+    path: '/cms/books'
+    methods:  ['GET']
+    defaults:
+        # Refers to src/AppBundle/Controller/BookController::listAction
+        _controller: 'AppBundle:Book:list'
+        _api_resource_class: 'AppBundle\Entity\Book'
+        _api_collection_operation_name: 'op_cms_book_list'

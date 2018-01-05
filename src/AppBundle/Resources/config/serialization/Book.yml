@@ -1,0 +1,16 @@
+AppBundle\Entity\Book:
+    attributes:
+        id:
+            groups: ['book_list', 'book_get', 'gr_cms_book_get']
+        isbn:
+            groups: ['book_list', 'book_get', 'gr_cms_book_get']
+        title:
+            groups: ['book_list', 'book_get', 'gr_cms_book_get']
+        description:
+            groups: ['book_list', 'book_get', 'gr_cms_book_get']
+        author:
+            groups: ['book_list', 'book_get']
+        publicationDate:
+            groups: ['book_list', 'book_get']
+        reviews:
+            groups: ['book_get']

@@ -1,0 +1,12 @@
+AppBundle\Entity\Review:
+    attributes:
+        id:
+            groups: ['book_get']
+        rating:
+            groups: ['book_get']
+        body:
+            groups: ['book_get']
+        author:
+            groups: ['book_get']
+        publicationDate:
+            groups: ['book_get']
