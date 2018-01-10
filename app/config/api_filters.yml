@@ -1,11 +1,8 @@
 # Learn more about filters
 # https://api-platform.com/docs/core/filters
+
+# Filters have to be added into the entity through @ApiResource > attributes > filters
 services:
-    # configure filters
-    #foo.search_filter:
-    #    parent: 'api_platform.doctrine.orm.search_filter'
-    #    arguments: [ { id: 'exact', bar: 'partial' } ]
-    #    tags: ['api_platform.filter']
     book.search_filter:
         parent: 'api_platform.doctrine.orm.search_filter'
         arguments: [ { id: 'exact', title: 'partial' } ]
@@ -16,3 +13,7 @@ services:
         parent: 'api_platform.doctrine.orm.search_filter'
         arguments: [ { book: 'exact' } ]
         tags: [ 'api_platform.filter' ]
+    review.publication_date_filter:
+        parent: 'api_platform.doctrine.orm.date_filter'
+        arguments: [ { publicationDate: ~ } ]
+        tags:  [ 'api_platform.filter' ]
