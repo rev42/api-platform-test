@@ -10,3 +10,9 @@ services:
         parent: 'api_platform.doctrine.orm.search_filter'
         arguments: [ { id: 'exact', title: 'partial' } ]
         tags: [ 'api_platform.filter' ]
+    # Add filter on Book relation to get all reviews related to a book
+    # ie: http://127.0.0.1:8000/reviews?book=1
+    review.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { book: 'exact' } ]
+        tags: [ 'api_platform.filter' ]

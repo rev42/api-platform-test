@@ -1,5 +1,7 @@
 AppBundle\Entity\Book:
-    # does not seem to work. Need to be defined in Entity class then
+    # adding filters here does not seem to work.
+    # Need to be defined in Entity class.
+    # The filter is defined in app/config/api_filters.yml
     #attributes:
     #    filters: 
     #        'book.search_filter'

@@ -8,7 +8,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * A review of a book.
- * @ApiResource
+ * @ApiResource(attributes={"filters"={"review.search_filter"}})
  * @ORM\Entity
  */
 class Review
