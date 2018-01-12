@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * A review of a book.
@@ -28,6 +29,7 @@ class Review
      *
      * @ORM\Column(type="smallint")
      * @Groups({"book_get"})
+     * @Assert\Range(min=0, max=5)
      */
     private $rating;
 
@@ -36,6 +38,7 @@ class Review
      *
      * @ORM\Column(type="text")
      * @Groups({"book_get"})
+     * @Assert\NotBlank
      */
     private $body;
 
@@ -43,6 +46,7 @@ class Review
      * @var string The author of the review.
      *
      * @ORM\Column
+     * @Assert\NotBlank
      */
     private $author;
 
@@ -50,6 +54,7 @@ class Review
      * @var \DateTimeInterface The date of publication of this review.
      *
      * @ORM\Column(type="datetime")
+     * @Assert\NotBlank
      */
     private $publicationDate;
 
@@ -57,6 +62,7 @@ class Review
      * @var Book The book this review is about.
      *
      * @ORM\ManyToOne(targetEntity="Book", inversedBy="reviews")
+     * @Assert\NotNull
      */
     private $book;
 

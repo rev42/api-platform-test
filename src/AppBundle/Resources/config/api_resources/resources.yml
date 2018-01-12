@@ -8,6 +8,10 @@ AppBundle\Entity\Book:
     # Resource collections
     collectionOperations:
         # enable GET method on Book collections
+        post:
+            method: 'POST'
+            normalization_context:
+                  groups: ['book_get']
         get:
             method: 'GET'
             normalization_context:
